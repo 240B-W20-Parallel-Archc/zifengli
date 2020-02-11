@@ -1,5 +1,4 @@
-this directory contains an implementation of project_1 for
-cse240b winter 2019
+This directory contains an implementation of project for
+cse240b winter 2020
 
-this program determines the number of levels of cache
-and the latency for each level of cache.
+See the project assignment for detailed instructions
