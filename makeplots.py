@@ -14,7 +14,9 @@ def plotOneSet(rawData, sName, col='r'):
     sz = []
     lat = []
     for l in rawData:
+        print(l)
         m = re.search('size:\s+(\d+)\s*K?\s+latency:\s+(\d+\.\d+)\sns', l)
+        print(m)
         if (m):
             csz = int(m.group(1))
             if re.search('\d+\s+K\s+latency', l):
@@ -50,8 +52,8 @@ def doPlot(rawData, plotfilename):
             sz.append(csz)
             lat.append(float(m.group(2)))
 
-    print sz
-    print lat
+    print (sz)
+    print (lat)
     for x,y in zip(sz, lat):
         print("{:d}, {:f}".format(x,y))
 

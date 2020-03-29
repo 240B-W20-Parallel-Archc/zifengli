@@ -1,0 +1,15 @@
+size: 64    latency: 2.2461 ns
+size: 128    latency: 2.2949 ns
+size: 256    latency: 2.2461 ns
+size: 512    latency: 2.2705 ns
+size: 1 K  latency: 2.2583 ns
+size: 2 K  latency: 2.2583 ns
+size: 4 K  latency: 2.2583 ns
+size: 8 K  latency: 2.2380 ns
+size: 16 K  latency: 2.2507 ns
+size: 32 K  latency: 2.2316 ns
+size: 64 K  latency: 2.2888 ns
+size: 128 K  latency: 2.3365 ns
+size: 256 K  latency: 2.2650 ns
+size: 512 K  latency: 2.2948 ns
+size: 1024 K  latency: 2.2799 ns

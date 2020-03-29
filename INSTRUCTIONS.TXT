@@ -1,0 +1,8 @@
+This directory contains an implementation of project for
+cse240b winter 2020
+
+Run ./doit.sh to compile and run sample latency measurement for single thread. 
+This script will also generate txt files with the time and graphs. 
+The prodeuced txt file will have a format of "x_thread_{read/write}.txt", where x is the number of threads used.
+
+Expect python 3.7 environment.  

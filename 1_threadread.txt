@@ -1,0 +1,5 @@
+size: 64 K  latency: 1.8692 ns
+size: 128 K  latency: 1.8680 ns
+size: 256 K  latency: 1.8895 ns
+size: 512 K  latency: 1.8805 ns
+size: 1024 K  latency: 1.8820 ns

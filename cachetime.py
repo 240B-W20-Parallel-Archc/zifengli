@@ -27,21 +27,36 @@ args = parser.parse_args()
 reps = 0
 raw_output = []
 for i in range(args.minLg2, args.maxLg2+1):
-    if i < 12:
-	if args.modify:
-        	reps = 1000000000   # 1 B
-	else:
-        	reps = 10000000000   # 10 B
+    if i < 7:
+        if args.modify:
+                reps = 100000000   # 1 B
+        else:
+                reps = 100000000   # 10 B
+    elif i < 10:
+        if args.modify:
+                reps = 25000000   # 1 B
+        else:
+                reps = 50000000   # 10 B
+    elif i < 13:
+        if args.modify:
+                reps = 2500000   # 100M
+        else:
+                reps = 5000000   # 1B
     elif i < 16:
-	if args.modify:
-        	reps = 100000000   # 100M
-	else:
-        	reps = 1000000000   # 1B
+        if args.modify:
+                reps = 750000   # 10M 
+        else:
+                reps = 1000000   # 100M 
+    elif i < 18:
+        if args.modify:
+                reps = 75000   # 10M 
+        else:
+                reps = 100000   # 100M 
     else:
-	if args.modify:
-        	reps = 100000000   # 10M 
-	else:
-        	reps = 1000000000   # 100M 
+        if args.modify:
+                reps = 10000   # 10M 
+        else:
+                reps = 25000   # 100M 
 
     if args.test:
         reps = 10000
@@ -72,7 +87,7 @@ for i in range(args.minLg2, args.maxLg2+1):
         cmd.append(str(args.threads))
     cmd.append(str(i))
 
-#    print cmd
+    print (cmd)
     try:
         startTime = time.time()
         raw_output.append(subprocess.check_output(cmd))
@@ -86,7 +101,12 @@ for i in range(args.minLg2, args.maxLg2+1):
         print("Warning: time < 10.0 seconds {:f}".format(endTime-startTime))
 
 try:
-    fout = open(args.outnm+".txt", "w")
+    if(args.modify):
+        fileName = str(args.threads) + "_thread" + "_write"
+    else:
+        fileName = str(args.threads) + "_thread" + "_read"
+
+    fout = open(fileName+".txt", "wb")
 except:
     print("Error: Could not open otuput file {:s}".format(args.outnm))
     exit(-1)
